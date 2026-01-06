@@ -146,7 +146,7 @@ export function VideoSection({ videoId = 1 }: VideoSectionProps) {
                                                 <MagneticButton>
                                                     <div className="w-fit flex items-center gap-4 px-10 py-5 bg-accent text-accent-foreground rounded-full font-bold text-lg hover:scale-105 transition-transform duration-500 shadow-2xl">
                                                         <Play className="w-5 h-5 fill-current" />
-                                                        <span className="tracking-wider">START EXPERIENCE</span>
+                                                        <span className="tracking-wider">Watch</span>
                                                     </div>
                                                 </MagneticButton>
                                             </motion.div>
