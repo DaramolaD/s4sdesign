@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Calendar, Video, FileText, Sparkles, ChevronDown, Check } from "lucide-react";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 import * as React from "react";
 
 const bookingOptions = [
@@ -197,8 +198,8 @@ export function ContactForm({ variant = "light" }: ContactFormProps) {
                                                     setIsRenovationOpen(false);
                                                 }}
                                                 className={`w-full flex items-center justify-between px-5 py-3 text-sm transition-colors ${isDark
-                                                        ? "hover:bg-white/5 text-white"
-                                                        : "hover:bg-gray-50 text-[#1A1A1A]"
+                                                    ? "hover:bg-white/5 text-white"
+                                                    : "hover:bg-gray-50 text-[#1A1A1A]"
                                                     } ${renovationType === option.value ? (isDark ? "bg-white/5" : "bg-gray-50") : ""}`}
                                             >
                                                 {option.label}
@@ -229,15 +230,14 @@ export function ContactForm({ variant = "light" }: ContactFormProps) {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                    type="submit"
-                    className={`group flex items-center gap-4 ${buttonClass} pl-8 pr-2 py-2 rounded-full font-bold text-lg transition-all duration-300 shadow-xl hover:-translate-y-1 active:scale-95 w-full justify-center md:w-auto`}
-                >
-                    Request Free Quote
-                    <div className="bg-accent rounded-full p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
-                        <ArrowRight className="w-5 h-5 text-white transition-colors duration-300 group-hover:text-accent" />
-                    </div>
-                </button>
+                <div className="flex justify-center md:justify-start">
+                    <ExpandableButton
+                        label="Request Free Quote"
+                        variant="primary"
+                        type="submit"
+                        className="w-full md:w-auto text-lg py-3 pl-8 pr-2"
+                    />
+                </div>
             </form>
         </motion.div>
     );

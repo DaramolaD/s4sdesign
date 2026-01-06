@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +22,7 @@ const aboutImages = [
 
 export function AboutNarrative() {
     return (
-        <section className="py-24 md:py-32 px-6 lg:px-12 bg-white overflow-hidden relative">
+        <section className="py-24 md:py-20 px-6 lg:px-12 bg-white overflow-hidden relative">
             <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-accent/5 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2" />
 
             <div className="max-w-7xl mx-auto">
@@ -106,16 +108,14 @@ export function AboutNarrative() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
                         >
-                            <Link
-                                href="/about"
-                                className="group inline-flex items-center gap-5 bg-accent text-white pl-8 pr-3 py-3 rounded-full font-bold text-lg hover:bg-secondary transition-all duration-300 shadow-xl shadow-accent/20 hover:-translate-y-1 active:scale-95"
-                            >
-                                Discover Our Story
-                                <div className="bg-white rounded-full p-2 transition-all duration-300 group-hover:scale-110 group-hover:bg-accent">
-                                    <ChevronRight className="w-5 h-5 text-accent transition-colors duration-300 group-hover:text-white" />
-                                </div>
-                            </Link>
-                        </motion.div>
+                            <div className="pt-4">
+                                <ExpandableButton
+                                    href="/about"
+                                    label="Read Our Story"
+                                    variant="primary"
+                                    className="text-lg py-3 pl-8 pr-2"
+                                />
+                            </div></motion.div>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { AwardsSection } from "@/components/sections/AwardsSection";
+import { VideoSection } from "@/components/sections/VideoSection";
 import ceo from "../../../public/image/ceo4.png";
 
 const philosophy = [
@@ -124,6 +125,9 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Owner Video Section */}
+            <VideoSection videoId={3} />
+
             <AwardsSection />
 
             {/* Philosophy Section */}
@@ -184,7 +188,7 @@ export default function AboutPage() {
                             "Design is not just what it looks like and feels like. Design is how it works and how it reflects the soul of those who inhabit it."
                         </h3>
                         <div className="mt-12 space-y-2">
-                            <p className="text-accent text-xl uppercase tracking-[0.3em] font-black">— Sepideh Sayad</p>
+                            <p className="text-accent text-xl uppercase tracking-[0.3em] font-black">Sepideh Sayad</p>
                             <p className="text-white/40 text-sm uppercase tracking-widest">Founder & Creative Director</p>
                         </div>
                     </motion.div>

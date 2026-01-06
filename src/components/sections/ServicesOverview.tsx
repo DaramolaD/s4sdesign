@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Home, Building2, Layout, Ruler, Palette, Briefcase, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 import Link from "next/link";
 
 const services = [
@@ -46,15 +47,14 @@ export function ServicesOverview() {
                         <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-lg font-medium">
                             S4S Design provides comprehensive interior design solutions globally. Our approach combines 10+ years of experience with a modern, sophisticated aesthetic.
                         </p>
-                        <Link
-                            href="/services"
-                            className="group flex items-center gap-4 bg-accent text-[#0B0B0B] pl-6 pr-2 py-2 rounded-full font-bold text-lg hover:bg-[#E0C060] hover:text-[#0B0B0B] transition-all w-fit shadow-xl"
-                        >
-                            Explore All Services
-                            <div className="bg-accent rounded-full p-2 group-hover:bg-white transition-colors">
-                                <ChevronRight className="w-5 h-5 text-white group-hover:text-accent" />
-                            </div>
-                        </Link>
+                        <div className="pt-4">
+                            <ExpandableButton
+                                href="/services"
+                                label="Explore All Services"
+                                variant="primary"
+                                className="text-lg py-3 pl-6 pr-2"
+                            />
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -65,7 +65,7 @@ export function ServicesOverview() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="p-8 md:p-10 border border-white/10 rounded-2xl md:rounded-3xl hover:border-accent/40 transition-all duration-500 group bg-white/[0.03] backdrop-blur-sm"
+                                className="p-8 md:p-10 border border-white/10 rounded-2xl md:rounded-3xl hover:border-accent/40 transition-all duration-500 group bg-white/3 backdrop-blur-sm"
                             >
                                 <div className="bg-accent/10 w-16 h-16 rounded-xl flex items-center justify-center mb-8 group-hover:bg-accent group-hover:scale-110 transition-all duration-500">
                                     <service.icon className="w-8 h-8 text-accent group-hover:text-white transition-colors" />

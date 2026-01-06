@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { IMAGES } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -93,12 +94,12 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                     </div>
 
                     <div className="pt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                        <Button variant="outline" size="lg" className="rounded-full transition-all duration-300" asChild>
-                            <Link href={`/portfolio/${project.title.toLowerCase().replace(/ /g, "-")}`} className="flex items-center gap-2">
-                                Explorer Case Study
-                                <ArrowUpRight className="w-4 h-4" />
-                            </Link>
-                        </Button>
+                        <ExpandableButton
+                            href={`/portfolio/${project.title.toLowerCase().replace(/ /g, "-")}`}
+                            label="Explore Case Study"
+                            variant="primary"
+                            className="text-sm py-2"
+                        />
                     </div>
                 </div>
             </div>

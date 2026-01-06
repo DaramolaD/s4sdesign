@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import s4slogo from "../../../public/icons/s4slogo.svg";
 
 export function Footer() {
     return (
@@ -11,18 +12,9 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                     {/* Brand Info */}
                     <div className="space-y-6">
-                        <Link href="/" className="flex items-center gap-3 group">
-                            <div className="bg-accent p-2 rounded-lg">
-                                <span className="text-white font-serif font-extrabold text-2xl leading-none">S4S</span>
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="text-2xl font-serif font-bold tracking-tight text-white group-hover:text-accent transition-colors leading-none">
-                                    DESIGN
-                                </span>
-                                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50">
-                                    Sepideh Sayad
-                                </span>
-                            </div>
+                        {/* Logo */}
+                        <Link href="/" className="flex items-center gap-2 md:gap-3 group">
+                            <Image src={s4slogo} alt="s4slogo" width={80} height={80} />
                         </Link>
                         <p className="text-primary/70 max-w-xs leading-relaxed">
                             Transforming spaces with precision design. Over 10 years of creating residential and commercial interiors worldwide.

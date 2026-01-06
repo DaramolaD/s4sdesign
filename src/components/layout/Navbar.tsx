@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Phone, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import s4slogo from "../../../public/icons/s4slogo.svg"
@@ -65,15 +66,12 @@ export function Navbar() {
                             {item.name}
                         </Link>
                     ))}
-                    <Link
+                    <ExpandableButton
                         href="/contact"
-                        className="group flex items-center gap-3 bg-accent text-[#0B0B0B] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#E0C060] hover:text-[#0B0B0B] transition-all shadow-xl border border-white/10"
-                    >
-                        Contact Us
-                        <div className="bg-accent rounded-full p-1.5 group-hover:bg-white transition-colors">
-                            <ChevronRight className="w-4 h-4 text-white group-hover:text-accent" />
-                        </div>
-                    </Link>
+                        label="Contact Us"
+                        variant="primary"
+                        className="text-sm md:text-base py-2.5 pl-6 pr-2"
+                    />
                 </div>
 
                 {/* Mobile Toggle */}
@@ -112,10 +110,10 @@ export function Navbar() {
                             <Link
                                 href="/contact"
                                 onClick={() => setIsOpen(false)}
-                                className="flex items-center justify-between bg-accent text-[#0B0B0B] px-6 py-4 rounded-full font-bold text-base hover:bg-[#E0C060] transition-colors"
+                                className="flex items-center justify-between bg-accent text-background px-6 py-4 rounded-full font-bold text-base hover:bg-gold-soft hover:text-background transition-colors shadow-xl"
                             >
                                 Contact Us
-                                <Phone className="w-5 h-5 text-accent" />
+                                <Phone className="w-5 h-5 text-background" />
                             </Link>
                         </div>
                     </motion.div>

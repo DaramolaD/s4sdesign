@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 
 const reelIds = [
     "DO6YcvtjTKN",
@@ -51,7 +52,7 @@ export function InstagramFeed() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="relative aspect-[9/16] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gray-100"
+                            className="relative aspect-9/16 rounded-4xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-gray-100"
                         >
                             <iframe
                                 src={`https://www.instagram.com/reel/${id}/embed/`}
@@ -66,19 +67,12 @@ export function InstagramFeed() {
 
                 {/* Bottom CTA Group */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-                    <motion.a
+                    <ExpandableButton
                         href="https://instagram.com/s4sdesign"
-                        target="_blank"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="group flex items-center gap-5 bg-[#1A1A1A] text-white pl-8 pr-2 py-2 rounded-full font-bold text-lg hover:bg-accent transition-all duration-300 shadow-xl hover:-translate-y-1 active:scale-95"
-                    >
-                        Follow on Instagram
-                        <div className="bg-accent rounded-full p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
-                            <Instagram className="w-5 h-5 text-white transition-colors duration-300 group-hover:text-accent" />
-                        </div>
-                    </motion.a>
+                        label="Follow on Instagram"
+                        variant="primary"
+                        className="pl-8 pr-2 py-2 text-lg"
+                    />
 
                     <motion.a
                         href="https://threads.net/@s4sdesign"

@@ -3,28 +3,29 @@
 import { motion, useAnimationFrame, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 import { ChevronRight } from "lucide-react";
 
 const services = [
     {
-        title: "Full-Home Renovation",
-        description: "Complete home transformations tailored to your style and needs.",
+        title: "Residential Interior Design",
+        description: "Bespoke living spaces designed to reflect your personal narrative and lifestyle.",
         image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
     },
     {
-        title: "Kitchen Remodeling",
-        description: "Smart, stylish kitchens built for daily living.",
+        title: "Commercial Interior Design",
+        description: "Sophisticated business environments that enhance brand identity and productivity.",
+        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+    },
+    {
+        title: "Renovation & Project Management",
+        description: "End-to-end oversight ensuring your transformation is seamless, precise, and on schedule.",
         image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800",
     },
     {
-        title: "Bathroom Renovation",
-        description: "Modern, functional bathrooms with lasting comfort and quality.",
-        image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=80&w=800",
-    },
-    {
-        title: "Outdoor Living Spaces",
-        description: "Extend your home with inviting patios, decks, and garden zones.",
+        title: "Luxury Furniture Curation",
+        description: "Exclusive sourcing of high-end pieces and custom millwork for a truly unique finish.",
         image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
     },
 ];
@@ -94,15 +95,14 @@ export function RenovationServices() {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.2 }}
                         >
-                            <Link
-                                href="/contact"
-                                className="group inline-flex items-center gap-5 bg-secondary text-white pl-8 pr-3 py-3 rounded-full font-bold text-lg hover:bg-accent transition-all duration-300 shadow-xl hover:-translate-y-1 active:scale-95"
-                            >
-                                Request Free Quote
-                                <div className="bg-accent rounded-full p-2 transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
-                                    <ChevronRight className="w-5 h-5 text-white transition-colors duration-300 group-hover:text-accent" />
-                                </div>
-                            </Link>
+                            <div className="pt-2">
+                                <ExpandableButton
+                                    href="/services"
+                                    label="View All Services"
+                                    variant="primary"
+                                    className="text-lg py-3 pl-8 pr-2"
+                                />
+                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -150,15 +150,12 @@ export function RenovationServices() {
 
             {/* 3. Mobile CTA */}
             <div className="mt-16 lg:hidden px-6">
-                <Link
+                <ExpandableButton
                     href="/contact"
-                    className="group flex items-center justify-between bg-secondary text-white px-6 py-3 rounded-full font-bold text-base md:text-lg hover:bg-accent transition-all duration-300 shadow-xl active:scale-95"
-                >
-                    Request Free Quote
-                    <div className="bg-accent rounded-full p-2 transition-all duration-300 group-hover:scale-110 group-hover:bg-white ml-4">
-                        <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-white transition-colors duration-300 group-hover:text-accent" />
-                    </div>
-                </Link>
+                    label="Get a Free Consultation"
+                    variant="primary"
+                    className="w-full justify-between px-6 py-3 text-base md:text-lg"
+                />
             </div>
         </section>
     );

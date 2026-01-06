@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ExpandableButton } from "@/components/ui/expandable-button";
 import { IMAGES } from "@/lib/constants";
 import Link from "next/link";
 import { ChevronRight, Star } from "lucide-react";
@@ -18,7 +19,7 @@ export function Hero() {
                 className="absolute inset-0 z-0"
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-[center_top] md:bg-center bg-no-repeat transition-transform duration-700"
+                    className="absolute inset-0 bg-cover bg-position-[center_top] md:bg-center bg-no-repeat transition-transform duration-700"
                     style={{ backgroundImage: `url(${IMAGES.hero})` }}
                 />
                 <div className="absolute inset-0 bg-black/70" /> {/* Intense dark overlay */}
@@ -53,17 +54,12 @@ export function Hero() {
                         S4S Design transforms spaces with timeless design, superior materials, and detail-driven construction all managed with care from concept to completion.
                     </p>
 
-                    <div className="flex pt-2 md:pt-4">
-                        <Link
-                            href="/contact"
-                            className="group flex items-center gap-4 md:gap-5 bg-accent text-[#0B0B0B] pl-5 pr-2 py-1.5 md:py-2 rounded-full font-semibold text-base md:text-xl hover:bg-[#E0C060] hover:text-[#0B0B0B] transition-all duration-300 shadow-2xl hover:-translate-y-1 active:scale-95"
-                        >
-                            Request Free Quote
-                            <div className="bg-accent rounded-full p-2 md:p-2.5 transition-all duration-300 group-hover:scale-110 group-hover:bg-white">
-                                <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white transition-colors duration-300 group-hover:text-accent" />
-                            </div>
-                        </Link>
-                    </div>
+                    <ExpandableButton
+                        href="/contact"
+                        label="Request Free Quote"
+                        variant="primary"
+                        className="text-lg py-3 pl-8 pr-2"
+                    />
                 </motion.div>
 
                 {/* Floating Testimonial Container */}
@@ -79,7 +75,7 @@ export function Hero() {
                                 <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-accent text-accent" />
                             ))}
                         </div>
-                        <p className="text-sm md:text-base font-normal leading-[1.5] text-white/90">
+                        <p className="text-sm md:text-base font-normal leading-normal text-white/90">
                             "Sepideh made our renovation easy and seamless. The results were better than we imagined, and the team was professional from start to finish."
                         </p>
                         <div className="flex items-end justify-between">
