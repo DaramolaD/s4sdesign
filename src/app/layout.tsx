@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { Analytics } from "@vercel/analytics/next"
 
 // const playfair = Playfair_Display({
 //   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <BackToTop />
+        <Analytics />
       </body>
     </html>
   );
